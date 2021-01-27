@@ -98,4 +98,46 @@ g1 = Greeter.new("Jane")
 g1.name = "John"
 ```
 
+
+## 주석처리
+```ruby
+# Hello world
+puts "Hello World!"
 ```
+
+## nil
+루비에 있는 특별한 객체입니다. “empty” 또는 “default” 값을 표현합니다.
+```ruby
+name = nil
+if name == nil
+  puts "name is nil"
+end
+```
+
+## iteration 순환과 반복
+```ruby
+names = ['alice','bob', 'john']
+names.each do |name|
+  puts "Hello #{name}!"
+end
+```
+do와 end 사이의 코드는 블록입니다. 블록은 익명함수 또는 람다와 유사합니다.
+
+
+## 루비에서의 전가의 보도, 블록
+
+```ruby
+# Say bye to everybody
+def say_bye
+  if @names.nil?
+    puts "..."
+  elsif @names.respond_to?("join")
+    # Join the list elements with commas
+    puts "Goodbye #{@names.join(", ")}.  Come back soon!"
+  else
+    puts "Goodbye #{@names}.  Come back soon!"
+  end
+end
+```
+
+이처럼 단지 어떤 메서드만을 가지고 있는지에 의존하는 것을 덕 타이핑(Duck Typing)이라고 부릅니다. “만약 오리처럼 걷고 오리처럼 꽥꽥거리면…”에서처럼 말입니다. 이런 방식의 장점은 어떤 타입의 변수를 지원할 것인지를 제한할 필요가 없다는 것입니다. 만약 누군가가 새로운 종류의 list 클래스를 정의했다고 해도, 거기에 join 메서드만 정의되어 있으면 잘 동작 할 것입니다.
