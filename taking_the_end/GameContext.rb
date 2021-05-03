@@ -5,19 +5,19 @@ class GameContext
   end
 
   def start
-
+    puts "Game Start"
   end
 
   def end
-
+    puts "End the Game"
   end
 
   def pause
-
+    "Paused"
   end
 
   def inputWord(player, word)
-
+    
   end 
 
 

@@ -1,13 +1,13 @@
 class Player
   
-  def initialize(id, countOfLife)
+  def initialize(id, name, countOfLife)
     @id = id
     @name = name
     @countOfLife = countOfLife
   end
 
   def getCountOfLife
-    @countOfLife
+    return @countOfLife
   end
 
   def decreaseLifeCount
@@ -15,3 +15,9 @@ class Player
   end
 
 end
+
+
+player1 = Player.new(1, '채윤', 3)
+puts "#{player1.getCountOfLife()}"
+puts "#{player1.decreaseLifeCount}"
+puts "#{player1.getCountOfLife}"
