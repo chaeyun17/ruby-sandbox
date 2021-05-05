@@ -4,9 +4,10 @@ class Player
     @id = id
     @name = name
     @countOfLife = countOfLife
+    @word = nil
   end
 
-  attr_reader :name
+  attr_reader :name, :word
 
   def getCountOfLife
     return @countOfLife
@@ -17,9 +18,8 @@ class Player
   end
 
   def sayWord
-    print "끝말잇기 단어를 입력하세요: "
+    print "'#{name}'님 단어를 입력하세요: "
     @word = gets.chomp
-    return @word
   end
 
   def isDead
